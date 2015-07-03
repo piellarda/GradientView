@@ -217,12 +217,7 @@ public class GradientView: UIView {
 				return UIColor(red: red, green: green, blue: blue, alpha: alpha).CGColor as AnyObject!
 			}
 
-			// TODO: This is ugly. Surely there is a way to make this more concise.
-			if let locations = locations {
-				gradient = CGGradientCreateWithColors(colorSpace, gradientColors, locations)
-			} else {
-				gradient = CGGradientCreateWithColors(colorSpace, gradientColors, nil)
-			}
+            gradient = CGGradientCreateWithColors(colorSpace, gradientColors, locations ?? nil)
 		}
 	}
 
